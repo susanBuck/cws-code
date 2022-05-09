@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <title>FlashWord</title>
+    <meta charset='utf-8'>
+
+    <script src='https://unpkg.com/vue@next' defer></script>
+    <script src='app.js' defer></script>
+
+    <style>
+        label {
+            display: block;
+        }
+
+        input,
+        button {
+            display: block;
+            margin: 10px 0px;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        [v-cloak] {
+            display: none
+        }
+    </style>
+</head>
+
+<body>
+    <h1>FlashWord</h1>
+
+    <div id='app' v-cloak>
+        <label for='answer'>What is the English translation of the word <strong>{{ wordA }}</strong>?</label>
+
+        <input type='text' v-model='answer' id='answer'>
+
+        <button v-on:click="correct = (answer == wordB); showFeedback = true">Check Answer</button>
+
+        <p v-if='answer != ""'>
+            Your answer: {{ answer }}
+        </p>
+
+        <div v-if='showFeedback'>
+            <p v-if='correct' class='correct'>
+                You got it!</p>
+            <p v-else class='incorrect'>
+                Sorry, that is incorrect - try again.
+            </p>
+
+            <button v-on:click='answer = ""; showFeedback = false'>Reset</button>
+        </div>
+
+    </div>
+</body>
+
+</html>

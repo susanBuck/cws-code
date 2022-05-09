@@ -1,0 +1,64 @@
+[v-cloak] {
+    display: none;
+}
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: black;
+    margin-top: 60px;
+}
+
+#cards {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-gap: 30px;
+}
+
+.card {
+    background-color: #E8F0FF;
+    border-radius: 5px;
+    padding: 10px 0;
+    font-size: 25px;
+}
+
+input[type=text] {
+    border: 0;
+    font-size: 25px;
+    border-radius: 5px;
+    margin-top: 5px;
+    text-align: center;
+    padding: 5px;
+}
+
+.word {
+    font-weight: bold;
+}
+
+.correctAnswer {
+    padding: 0;
+    margin: 0;
+}
+
+.correct {
+    color: #0f5132;
+    background-color: #d1e7dd;
+}
+
+#correctCount {
+    font-size: 20px;
+    margin: 10px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#completed {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0f5132;
+    padding: 10px;
+    margin: 10px;
+}

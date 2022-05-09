@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <title>FlashWord</title>
+    <meta charset='utf-8'>
+
+    <script src='https://unpkg.com/vue@next' defer></script>
+    <script src='app.js' defer></script>
+
+    <style>
+        input[type=text] {
+            border: 0;
+            font-size: 25px;
+            border-radius: 5px;
+            margin-top: 5px;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .correctAnswer {
+            padding: 0;
+            margin: 0;
+        }
+
+        .word {
+            font-weight: bold;
+        }
+
+        .card {
+            background-color: #E8F0FF;
+            border-radius: 5px;
+            padding: 10px 0;
+            font-size: 25px;
+        }
+
+        .correct {
+            color: #0f5132;
+            background-color: #d1e7dd;
+        }
+
+        #app {
+            font-family: Avenir, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-align: center;
+            color: black;
+            margin-top: 60px;
+        }
+
+        #completed {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0f5132;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #correctCount {
+            font-size: 20px;
+            margin: 10px;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        #cards {
+            justify-content: center;
+            display: grid;
+            /* specifies the number (and the widths) of columns in a grid layout */
+            grid-template-columns: 300px 300px 300px;
+            grid-gap: 30px;
+        }
+
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app' v-cloak>
+        <h1>FlashWord</h1>
+
+        <div v-if='completed' id='completed'>Good work, you completed all the words!</div>
+
+        <div id='correctCount' v-else>
+            You’ve correctly answered {{ correctCount }} out of {{ wordCount }} words
+        </div>
+
+        <div id='cards'>
+            <div v-for='word in shuffledWords' class='card' v-bind:class='{ correct: word.correct }'>
+
+                <div class='word'>{{ word.word_a }}</div>
+                <input type='text'
+                       v-if='!word.correct'
+                       v-model='word.answer'
+                       v-on:keyup.enter='checkAnswer(word)'>
+                <p class='correctAnswer' v-else>{{ word.answer }}</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <title>FlashWord</title>
+    <meta charset='utf-8'>
+
+    <script src='https://unpkg.com/vue@next' defer></script>
+    <script src='app.js' defer></script>
+
+    <link href='styles.css' rel='stylesheet'>
+
+</head>
+
+<body>
+
+    <div id='app' v-cloak>
+        <h1>FlashWord</h1>
+
+        <div id='cards'>
+            <div class='card' v-for='word in shuffledWords'>
+                {{ word.word_a }}
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
