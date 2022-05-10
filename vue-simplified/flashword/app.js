@@ -24,19 +24,32 @@ const FlashWord = {
                         answer: '',
                         correct: false
                     },
-                ]
+                ],
+            correctCount: 0,
+            completed: false
         }
     },
     computed: {
         shuffledWords() {
             return this.words.sort(() => .5 - Math.random());
+        },
+        wordCount() {
+            return this.words.length;
         }
     },
     watch: {
-
+        correctCount() {
+            this.completed = this.correctCount == this.wordCount;
+        }
     },
     methods: {
+        checkAnswer(word) {
+            word.correct = word.word_b == word.answer;
 
+            if (word.correct) {
+                this.correctCount++;
+            }
+        }
     }
 }
 

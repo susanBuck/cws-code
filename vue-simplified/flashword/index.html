@@ -17,9 +17,18 @@
     <div id='app' v-cloak>
         <h1>FlashWord</h1>
 
+        <p v-if='completed' id='completed'>Good work, you completed all the words!</p>
+        <p v-else id='correctCount'>You have answered {{ correctCount }} out of {{ wordCount }}</p>
+
         <div id='cards'>
-            <div class='card' v-for='word in shuffledWords'>
-                {{ word.word_a }}
+            <div
+                 class='card'
+                 v-for='word in shuffledWords'
+                 v-bind:class='{ correct: word.correct}'>
+                <p class='word'>{{ word.word_a }}</p>
+
+                <input v-if='!word.correct' type='text' v-model='word.answer' v-on:keyup.enter='checkAnswer(word)'>
+                <p v-else class='correctAnswer'>{{ word.answer }}</p>
             </div>
         </div>
 
