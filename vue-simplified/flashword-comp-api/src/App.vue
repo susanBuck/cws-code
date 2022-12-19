@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watchEffect } from 'vue'
 import WordCard from './components/WordCard.vue'
 
 // Data properties
@@ -40,7 +40,7 @@ const wordCount = computed(() => {
 });
 
 // Watchers
-watch(correctCount => {
+watchEffect(correctCount => {
     completed.value = correctCount.value == wordCount.value;
 });
 

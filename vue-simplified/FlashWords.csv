@@ -1,0 +1,30 @@
+word_a,word_b,hint
+hola,hello,greeting
+adios ,goodbye,greeting
+buenos días,good morning,greeting
+buenas tarde,good afternoon,greeting
+buenas noches,good night,greeting
+negro,black,color
+gris,grey,color
+blank,white,color
+amarillo,yellow,color
+anaranjado,orange,color
+rojo,red,color
+rosado,pink,color
+azul,blue,color
+verde,green,color
+cero,zero,number
+uno,one,number
+dos,two,number
+tres,three,number
+quatro,four,number
+cinco ,five,number
+seis,six,number
+siete,seven,number
+nueve,eight,number
+diez,nine,number
+trabjar,to work,verb
+cantar,to sing,verb
+hablar,to speak,verb
+escribir,to read,verb
+ayudar,to help,verb
