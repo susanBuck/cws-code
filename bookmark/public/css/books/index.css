@@ -1,0 +1,51 @@
+#books {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+#newBooks {
+    background-color: lightyellow;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#newBooks ul {
+    list-style-type: none;
+}
+
+a:link.book,
+a:visited.book,
+a:active.book,
+a:hover.book {
+    padding: 10px;
+    display: block;
+    color: black;
+    text-decoration: none;
+    border: 1px solid #eeeeee;
+    margin: 5px;
+    min-width: 25%;
+    max-width: 200px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom:0px;
+    padding:0;
+}
+
+p.author {
+    color:grey;
+}
+
+a:hover.book {
+    background-color: rgb(208, 246, 253);
+}
+
+.cover {
+    width: 125px;
+    height: 175px;
+    margin: 10px;
+}

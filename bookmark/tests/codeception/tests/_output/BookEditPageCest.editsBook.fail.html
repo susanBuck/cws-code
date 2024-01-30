@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <title>Edit book The Great Gatsby
+</title>
+    <meta charset='utf-8'>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href='/css/bookmark.css' rel='stylesheet'>
+
+    </head>
+<body>
+
+
+<header>
+    <a href='/'><img src='/images/bookmark-logo@2x.png' id='logo' alt='bookmark Logo'></a>
+
+    <nav>
+        <ul>
+            <li><a href='/'>Home</a></li>
+
+                        <li><a href='/books'>All Books</a></li>
+            <li><a href='/books/create'>Add a Book</a></li>
+            <li><a href='/list'>Your list</a></li>
+            
+            <li><a href='/contact'>Contact</a></li>
+            
+            <li>
+                                <form method='POST' id='logout' action='/logout'>
+                        <input type="hidden" name="_token" value="Byum2sIkEyIQgSEi3qCHo4GwPETmtqXAcbZ8fOE3">
+
+                        
+
+                        <button type='submit' class='button-link' test='logout-button'>
+                            Logout
+                        </button>
+                    </form>
+                            </li>
+        </ul>
+    </nav>
+</header>
+
+<section id='main'>
+    
+<h1>Edit</h1>
+<h2>The Great Gatsby</h2>
+
+<form method='POST' action='/books/the-great-gatsby'>
+    <div class='details'>* Required fields</div>
+    <input type="hidden" name="_token" value="Byum2sIkEyIQgSEi3qCHo4GwPETmtqXAcbZ8fOE3">
+    <input type="hidden" name="_method" value="put">
+
+    <label for='slug'>* Short URL</label>
+    <input type='text' test='slug-input' name='slug' id='slug' value='the-great-gatsby'>
+    <div class='details'>
+        This is is a unique URL identifier for the book, containing only alphanumeric characters and dashes.
+        <br>It’s suggested that the slug be based on the book title, e.g. a good slug for the book <em>“War and Peace”</em> would be <em>“war-and-peace”</em>.
+    </div>
+       
+    <label for='title'>* Title</label>
+    <input type='text' test='title-input' name='title' id='title' value='Some new title...'>
+    
+    <label for='title'>* Author</label>
+    <input type='text' name='author' id='author' value=''>
+       
+    <label for='published_year'>* Published Year (YYYY)</label>
+    <input type='text' name='published_year' id='published_year' value='1925'>
+    
+    <label for='cover_url'>Cover URL</label>
+    <input type='text' name='cover_url' id='cover_url' value='https://hes-bookmark.s3.amazonaws.com/the-great-gatsby.jpg'>
+    
+    <label for='info_url'>* Wikipedia URL</label>
+    <input type='text' name='info_url' id='info_url' value='https://en.wikipedia.org/wiki/The_Great_Gatsby'>
+           
+    <label for='purchase_url'>* Purchase URL </label>
+    <input type='text' name='purchase_url' id='purchase_url' value='http://www.barnesandnoble.com/w/the-great-gatsby-francis-scott-fitzgerald/1116668135?ean=9780743273565'>
+        
+    <label for='description'>Description</label>
+    <textarea name='description'>The Great Gatsby is a 1925 novel written by American author F. Scott Fitzgerald that follows a cast of characters living in the fictional towns of West Egg and East Egg on prosperous Long Island in the summer of 1922. The story primarily concerns the young and mysterious millionaire Jay Gatsby and his quixotic passion and obsession with the beautiful former debutante Daisy Buchanan. Considered to be Fitzgerald’s magnum opus, The Great Gatsby explores themes of decadence, idealism, resistance to change, social upheaval and excess, creating a portrait of the Roaring Twenties that has been described as a cautionary tale regarding the American Dream.</textarea>
+        
+    <button type='submit' test='update-book-button' class='btn btn-primary'>Update Book</button>
+
+            <div class='alert alert-danger'>
+            Please correct the above errors.
+        </div>
+    
+</form>
+
+
+</section>
+
+<footer>
+    &copy; Bookmark, Inc. susanbuck@fas.harvard.edu
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+input[name=searchTerms] {
+    width: 300px;
+    margin: auto;
+}
+
+label {
+    text-align: center;
+}
+
+label[for='title'] {
+    margin-right: 10px;
+}

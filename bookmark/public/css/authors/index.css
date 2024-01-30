@@ -1,0 +1,30 @@
+.author {
+    margin:auto;
+    margin-top:10px;
+    padding: 10px;
+    display: block;
+    color: black;
+    text-decoration: none;
+    border: 1px solid #eeeeee;
+    min-width: 25%;
+    max-width: 800px;
+    text-align: center;
+}
+
+
+a.deleteLink:link {
+    display:block;
+    text-decoration: none;
+    color:grey;
+}
+
+a.deleteLink:hover {
+    text-decoration: none;
+    color:blue;
+}
+
+.cover {
+    width: 125px;
+    height: 175px;
+    margin: 10px;
+}
