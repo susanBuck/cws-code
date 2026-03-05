@@ -1,0 +1,19 @@
+
+Call:
+lm(formula = final_score ~ study_hours, data = df)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-15.4018  -4.9295   0.2368   4.5982  16.4607 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  56.2312     2.0310   27.69   <2e-16 ***
+study_hours   4.7228     0.3239   14.58   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 6.716 on 111 degrees of freedom
+Multiple R-squared:  0.6569,	Adjusted R-squared:  0.6538 
+F-statistic: 212.5 on 1 and 111 DF,  p-value: < 2.2e-16
+

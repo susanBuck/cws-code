@@ -1,0 +1,10 @@
+# R session and history
+.Rhistory
+.RData
+.Rproj.user/
+
+# Mac
+.DS_Store
+
+/.quarto/
+**/*.quarto_ipynb

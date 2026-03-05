@@ -1,0 +1,7 @@
+characters,isWord,answer
+cat,1,right
+bar,1,right
+tea,1,right
+ghs,0,left
+jul,0,left
+pok,0,left

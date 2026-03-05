@@ -1,0 +1,96 @@
+
+---
+title: "Study Hours vs Final Score"
+author: "SB"
+format:
+  html:
+    toc: true
+    number-sections: true
+execute:
+  echo: true
+  message: false
+  warning: false
+---
+
+# Overview
+
+This report summarizes the relationship between study hours and final exam scores using processed project data.
+
+The analysis includes:
+
+- Basic summary statistics  
+- A linear regression model  
+- A visualization of the relationship  
+
+---
+
+# Load Required Libraries
+
+```{r}
+library(readr)
+library(dplyr)
+library(ggplot2)
+```
+
+---
+
+# Load Processed Data
+
+```{r}
+scores <- read_csv("../data/processed/scores_clean.csv", show_col_types = FALSE)
+head(scores)
+```
+
+---
+
+# Summary Statistics
+
+```{r}
+summary_stats <- scores |>
+  summarise(
+    total_observations = n(),
+    avg_study_hours = mean(study_hours),
+    avg_final_score = mean(final_score),
+    min_final_score = min(final_score),
+    max_final_score = max(final_score)
+  )
+
+summary_stats
+```
+
+---
+
+# Linear Regression Model
+
+```{r}
+model <- lm(final_score ~ study_hours, data = scores)
+summary(model)
+```
+
+---
+
+# Visualization
+
+```{r}
+ggplot(scores, aes(x = study_hours, y = final_score)) +
+  geom_point(color = "blue") +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  labs(
+    title = "Final Score vs Study Hours",
+    x = "Study Hours",
+    y = "Final Score"
+  ) +
+  theme_minimal()
+```
+
+---
+
+# Conclusion
+
+This example demonstrates:
+
+- How to separate data processing from reporting  
+- How to generate reproducible reports with Quarto  
+- How to maintain a clean project structure  
+
+By keeping data, reusable functions, scripts, and reports organized, your workflow becomes easier to scale and reproduce.

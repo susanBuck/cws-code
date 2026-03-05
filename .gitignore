@@ -3,3 +3,4 @@
 
 # Ignore vendor directory recursively
 **/vendor
+.Rproj.user
